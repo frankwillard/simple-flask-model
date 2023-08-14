@@ -56,7 +56,3 @@ def flask_predict():
     except Exception as e:
         print("Error predicting:", str(e))
         return jsonify({"error": "Internal Server Error"}), 500
-
-
-if __name__ == "__main__":
-    app.run()
