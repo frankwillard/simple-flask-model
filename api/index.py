@@ -9,16 +9,14 @@ def home():
     return 'Hello, World!'
 
 # Define a route for prediction
-#  methods=["POST"]
-@app.route('flask-predict')
+#  
+@app.route('flask-predict', methods=["POST"])
 def flask_predict():
-    model_path = os.path.join(
-        os.path.dirname("../models/HOF-classifier.pkl"
-    )
-    scaler_path = os.path.join(
-        os.path.dirname("../models/HOF-scaler.pkl"
-    )
+
+    model_path = os.path.join("../models/HOF-classifier.pkl")
+    scaler_path = os.path.join("../models/HOF-scaler.pkl")
     print(model_path)
+    
     # Load the trained model
     model = joblib.load(model_path)
     scaler = joblib.load(scaler_path)
