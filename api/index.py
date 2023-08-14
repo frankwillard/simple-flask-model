@@ -31,9 +31,13 @@ model_cols = [
     "Championships",
 ]
 
+@app.route('/')
+def home():
+    return 'Hello, World!'
 
 # Define a route for prediction
-@app.route("/api/flask-predict", methods=["POST"])
+#  methods=["POST"]
+@app.route('/api/flask-predict')
 def flask_predict():
     try:
         # Parse the input values from the request body
