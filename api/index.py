@@ -10,7 +10,7 @@ def home():
 
 # Define a route for prediction
 #  methods=["POST"]
-@app.route('/api/flask-predict')
+@app.route('flask-predict')
 def flask_predict():
     model_path = os.path.join(
         os.path.dirname("../models/HOF-classifier.pkl"
@@ -54,5 +54,6 @@ def flask_predict():
         # Return the predicted probabilities as the API response
         return jsonify({"predictedProbabilities": predicted_probabilities.tolist()})
     except Exception as e:
-        print("Error predicting:", str(e))
-        return jsonify({"error": "Internal Server Error"}), 500
+        # print("Error predicting:", str(e))
+        # return jsonify({"error": "Internal Server Error"}), 500
+        return 'Hello, World 2!'
